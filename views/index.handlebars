@@ -10,7 +10,7 @@
             {{#each burgers}} {{#unless devoured}}
             <div class="well well-sm well-burger">
                 <p>{{id}}. {{burger_name}}</p>
-                <button id="devourBurger" class="btn btn-danger pull-right" data-id="{{id}}">Devour!</button>
+                <button class="btn btn-danger btn-devour pull-right" data-id="{{id}}">Devour!</button>
             </div>
             {{/unless}} {{/each}}
         </div>
@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
             <form class="burger-form">
-                <input type="text" class="form-control" placeholder="Burger">
+                <input id="burgerName" type="text" class="form-control" placeholder="Burger">
                 <button type="submit" class="btn btn-primary">Add Burger!</button>
                 <p>Enter a burger you want to eat and click the "Submit" button</p>
             </form>
