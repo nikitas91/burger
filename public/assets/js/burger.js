@@ -17,14 +17,31 @@ $(function () {
     $(".burger-form").on("submit", function (event) {
         event.preventDefault();
 
-        let newBurger = { burger_name: $("#burgerName").val().trim() };
+        if (validateForm()) {
+            let newBurger = { burger_name: $("#burgerName").val().trim() };
 
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(function(){
-            console.log("New burger has been added!");
-            location.reload();
-        });
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(function () {
+                console.log("New burger has been added!");
+                location.reload();
+            });
+        }
     });
 });
+
+function validateForm() {
+    let validated = true;
+
+    $(".form-group").removeClass("has-error");
+    $("#helpBlock").hide();
+
+    if ($("#burgerName").val() === "") {
+        $("#burgerName").parent().addClass("has-error");
+        $("#helpBlock").show();
+        validated = false;
+    }
+
+    return validated;
+}
