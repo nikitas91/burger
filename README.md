@@ -5,7 +5,7 @@ Make some burgers, eat some burgers, and then make some more!
 Full stack NodeJS app using a MySQL database, Express, and Handlebars.
 
 ### Heroku Url
-[https://boiling-plains-74468.herokuapp.com/](Eat-Da-Burger!)
+[Eat-Da-Burger!](https://boiling-plains-74468.herokuapp.com/)
 
 ### Author
 Nikita Sasunkevich
